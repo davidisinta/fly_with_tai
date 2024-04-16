@@ -122,7 +122,7 @@ The Flight Bookings & Price Tracking app allows users to seamlessly search for a
 ## Wireframes
 
 [Add picture of your hand sketched wireframes in this section]
-<img src="file:///Users/davidisinta/Library/Mobile%20Documents/com~apple~CloudDocs/C9BEA923-38E4-44B9-A3AB-278CD939D9B6.JPG" width=600>
+<img src="" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
