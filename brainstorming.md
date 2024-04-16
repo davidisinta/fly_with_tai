@@ -11,7 +11,7 @@
 
 ### Description
 
-The Flight Bookings & Price Tracking app allows users to seamlessly search for available flights and conveniently track up to 5 flights of their choice. With automated notifications every 24 hours, users stay informed about any price changes, ensuring they never miss out on the best deals. Push notifications enhance the experience by delivering real-time updates, making travel planning effortless and cost-effective.
+The Flight Bookings & Price Tracking app allows users to seamlessly search for available flights and conveniently track up to 10 flights of their choice. With automated notifications every 24 hours, users stay informed about any price changes, ensuring they never miss out on the best deals. Push notifications enhance the experience by delivering real-time updates, making travel planning effortless and cost-effective.
 
 ### App Evaluation
 
