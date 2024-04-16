@@ -97,20 +97,26 @@ The Flight Bookings & Price Tracking app allows users to seamlessly search for a
 - [ ] Profile
 * user can see a list of flights they are tracking 
 
+- [ ] Settings
+* user can change profile settings
+
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
-* Flight Detail
+* Stream
 * Flight Search
 * Profile
 
 **Flow Navigation** (Screen to Screen)
 - [ ] Login/Register
-   * => Search
-- [ ] Search
    * => Stream
+- [ ] Search
+   * => Detail
 - [ ] Profile
-   * => None
+   * => Settings
+- [ ] Stream
+   * => Detail
+
 
 
 ## Wireframes
