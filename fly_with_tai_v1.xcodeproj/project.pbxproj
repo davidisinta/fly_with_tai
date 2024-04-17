@@ -16,6 +16,7 @@
 		D8B5DE522BCE4A9C002205F9 /* fly_with_tai_v1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B5DE512BCE4A9C002205F9 /* fly_with_tai_v1Tests.swift */; };
 		D8B5DE5C2BCE4A9C002205F9 /* fly_with_tai_v1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B5DE5B2BCE4A9C002205F9 /* fly_with_tai_v1UITests.swift */; };
 		D8B5DE5E2BCE4A9C002205F9 /* fly_with_tai_v1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B5DE5D2BCE4A9C002205F9 /* fly_with_tai_v1UITestsLaunchTests.swift */; };
+		D8B5DE6B2BCF589D002205F9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B5DE6A2BCF589D002205F9 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D8B5DE572BCE4A9C002205F9 /* fly_with_tai_v1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fly_with_tai_v1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B5DE5B2BCE4A9C002205F9 /* fly_with_tai_v1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fly_with_tai_v1UITests.swift; sourceTree = "<group>"; };
 		D8B5DE5D2BCE4A9C002205F9 /* fly_with_tai_v1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fly_with_tai_v1UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D8B5DE6A2BCF589D002205F9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				D8B5DE432BCE4A9B002205F9 /* Assets.xcassets */,
 				D8B5DE452BCE4A9B002205F9 /* LaunchScreen.storyboard */,
 				D8B5DE482BCE4A9B002205F9 /* Info.plist */,
+				D8B5DE6A2BCF589D002205F9 /* HomeViewController.swift */,
 			);
 			path = fly_with_tai_v1;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				D8B5DE3F2BCE4A99002205F9 /* ViewController.swift in Sources */,
 				D8B5DE3B2BCE4A99002205F9 /* AppDelegate.swift in Sources */,
 				D8B5DE3D2BCE4A99002205F9 /* SceneDelegate.swift in Sources */,
+				D8B5DE6B2BCF589D002205F9 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
