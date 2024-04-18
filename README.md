@@ -125,9 +125,6 @@ The Flight Bookings & Price Tracking app allows users to seamlessly search for a
 <img src="wireframe1.jpg" width=600>
 <img src="wireframe2.jpg" width=600>
 
-### [BONUS] Digital Wireframes & Mockups
-
-### [BONUS] Interactive Prototype
 
 ## Schema 
 
