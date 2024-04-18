@@ -10,7 +10,7 @@ import Foundation
 class FlightsNetworkService{
     
     
-    static func fetchFlights(completion: ((SearchResults) -> Void)? = nil) {
+    static func fetchFlights(completion: ((ReceivedFlights) -> Void)? = nil) {
             // Fetch flights asynchronously
         
 //        let parameters = "departure_id=CDG&arrival_id=NBO"
@@ -44,12 +44,37 @@ class FlightsNetworkService{
                     // If you need to convert JSON to a struct or other data model, do it here
                     // Example:
                     
-//                    let results = try? JSONDecoder().decode(SearchResults.self, from: data)
-                   
                     let decoder = JSONDecoder()
                     let response = try! decoder.decode(SearchResults.self, from: data)
+                    
+                    var bestFlightsArray: [BestFlight]?
+                    var otherFlightsArray: [OtherFlight]?
+                    
+                    
+                    bestFlightsArray = response.bestFlights
+                    otherFlightsArray = response.otherFlights
+                    
+                    
+                    
+                    // Adding a new key-value pair
+                    //airportCodes["SFO"] = "San Francisco
+//                    International Airport"
+                    
+                    var receivedFlights = ReceivedFlights(bestFlights: bestFlightsArray!, otherFlights: otherFlightsArray!)
+
+                    
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     DispatchQueue.main.async {
-                        completion?(response)
+                        
+                        
+                        completion?(receivedFlights)
                     }
                     
                     
@@ -83,6 +108,24 @@ class FlightsNetworkService{
 }
 
 
+// we want to return to the view a dict of flights,
+// we have 2 types of flights, best_flight & other_flight
+
+struct ReceivedFlights {
+    var bestFlights: [BestFlight]?
+    var otherFlights: [OtherFlight]?
+}
+
+
+
+
+
+
+
+
+
+
+
 // -----------
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
@@ -90,8 +133,6 @@ class FlightsNetworkService{
 //
 
 
-
-// MARK: - Welcome
 struct SearchResults: Codable {
     let searchMetadata: SearchMetadata
     let searchParameters: SearchParameters
@@ -106,7 +147,6 @@ struct SearchResults: Codable {
     }
 }
 
-// MARK: - BestFlight
 struct BestFlight: Codable {
     let flights: [Flight]
     let totalDuration: Int
@@ -126,7 +166,6 @@ struct BestFlight: Codable {
     }
 }
 
-// MARK: - CarbonEmissions
 struct CarbonEmissions: Codable {
     let thisFlight, typicalForThisRoute, differencePercent: Int
 
@@ -137,7 +176,6 @@ struct CarbonEmissions: Codable {
     }
 }
 
-// MARK: - Flight
 struct Flight: Codable {
     let departureAirport, arrivalAirport: Airport
     let duration: Int
@@ -169,7 +207,6 @@ enum Airplane: String, Codable {
     case boeing78710 = "Boeing 787-10"
 }
 
-// MARK: - Airport
 struct Airport: Codable {
     let name, id, time: String
 }
@@ -183,7 +220,7 @@ enum TravelClass: String, Codable {
     case economy = "Economy"
 }
 
-// MARK: - OtherFlight
+
 struct OtherFlight: Codable {
     let flights: [Flight]
     let layovers: [Layover]
@@ -204,13 +241,13 @@ struct OtherFlight: Codable {
     }
 }
 
-// MARK: - Layover
+
 struct Layover: Codable {
     let duration: Int
     let name, id: String
 }
 
-// MARK: - SearchMetadata
+
 struct SearchMetadata: Codable {
     let id, status: String
     let jsonEndpoint: String
@@ -232,7 +269,7 @@ struct SearchMetadata: Codable {
     }
 }
 
-// MARK: - SearchParameters
+
 struct SearchParameters: Codable {
     let engine, hl, gl, departureID: String
     let arrivalID, outboundDate, returnDate, currency: String

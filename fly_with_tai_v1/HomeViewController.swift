@@ -8,13 +8,59 @@
 import UIKit
 
 class HomeViewController: UIViewController, UITableViewDataSource {
+    
+    
+    private var gottenFlights: ReceivedFlights?
+    
+    @IBOutlet weak var flightsTableView: UITableView!
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        
+       
+        
+        
+        if let receivedFlights = gottenFlights {
+            
+            if let bestFlights = receivedFlights.bestFlights{
+                //handle best flights
+            }
+            
+            else{
+                //handle lack of best flights
+            }
+            
+            
+            
+            if let otherFlights = receivedFlights.otherFlights{
+                //handle other flights
+            }
+            
+            else{
+                //handle lack of other flights
+            }
+            
+            
+            
+            
+            
+            
+        } else {
+            print("************************************************")
+            print("There are no flights buddy!!")
+            print("************************************************")
+        }
+        
+        
+        
         
         return 5;
     
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         
         let cell = UITableViewCell()
@@ -28,9 +74,31 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     
     }
     
-    
-    
-    @IBOutlet weak var flightsTableView: UITableView!
+    func configureReceivedFlights(receivedFlights:ReceivedFlights)
+    {
+        self.gottenFlights = receivedFlights
+        
+        
+        
+        print("-------------------------------------------------------------------------")
+        print("-------------------------------------------------------------------------")
+        print("flights have arrived!!")
+        print("-------------------------------------------------------------------------")
+        print("-------------------------------------------------------------------------")
+        print(type(of: receivedFlights))
+        print("-------------------------------------------------------------------------")
+        print("-------------------------------------------------------------------------")
+        print("These are the best flights avaailable")
+        print(receivedFlights.bestFlights)
+        print("-------------------------------------------------------------------------")
+        print("-------------------------------------------------------------------------")
+        print("These are the other flights")
+        print(receivedFlights.otherFlights)
+
+        print("-------------------------------------------------------------------------")
+        print("-------------------------------------------------------------------------")
+        
+    }
     
     
 
@@ -43,17 +111,10 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         FlightsNetworkService.fetchFlights() { receivedFlights in
                     // Handle the received flights data here
             
-            print("-------------------------------------------------------------------------")
-            print("-------------------------------------------------------------------------")
-            print("flights have arrived!!")
-            print("-------------------------------------------------------------------------")
-            print("-------------------------------------------------------------------------")
-            print(type(of: receivedFlights))
-            print("-------------------------------------------------------------------------")
-            print("-------------------------------------------------------------------------")
-            print()
-            print("-------------------------------------------------------------------------")
-            print("-------------------------------------------------------------------------")
+            
+            self.configureReceivedFlights(receivedFlights: receivedFlights)
+            
+            
                 }
         
        
