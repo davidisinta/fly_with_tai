@@ -15,17 +15,85 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var flightsTableView: UITableView!
     
     
+    var bestFlightsCount:Int?
+    var otherFlighsCount: Int?
+    var bestFlights:[BestFlight]?
+    var otherFlights:[OtherFlight]?
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+        
+        return getNumberOfFlights();
+    
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        
+        let cell = UITableViewCell()
+        
+
+            // Get the movie-associated table view row
+            let flight = otherFlights?[indexPath.row]
+
+            // Configure the cell (i.e., update UI elements like labels, image views, etc.)
+        if let price = flight?.price {
+            cell.textLabel?.text = "The price of the flight is: \(price)"
+        } else {
+            cell.textLabel?.text = "The price of the flight is not available"
+        }
+
+
+            // Return the cell for use in the respective table view row
+            return cell
+
+            
+    
+    }
+    
+    func getNumberOfFlights()->Int{
+        
+        var bestCount: Int = 0;
+        var otherCount: Int = 0;
+        
+        if let results = self.bestFlightsCount
+        {
+            bestCount = self.bestFlightsCount!
+            
+        }
+        
+        if let results2 = self.otherFlighsCount
+        {
+            otherCount = self.bestFlightsCount!
+            
+        }
         
         
-       
+        let totalCount = bestCount + otherCount
+            print("Total number of received flights is: \(totalCount)")
+            
+            return totalCount
+        
+        
+        
+        
+    }
+    
+    func configureReceivedFlights(receivedFlights:ReceivedFlights)
+    {
+        self.gottenFlights = receivedFlights
         
         
         if let receivedFlights = gottenFlights {
             
             if let bestFlights = receivedFlights.bestFlights{
                 //handle best flights
+                self.bestFlights = bestFlights
+                
+                
+                // count number of best flights
+                self.bestFlightsCount = bestFlights.count
             }
             
             else{
@@ -36,6 +104,11 @@ class HomeViewController: UIViewController, UITableViewDataSource {
             
             if let otherFlights = receivedFlights.otherFlights{
                 //handle other flights
+                self.otherFlights = otherFlights
+                
+                
+                // count number of other flights
+                self.otherFlighsCount = otherFlights.count
             }
             
             else{
@@ -55,48 +128,13 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         
         
         
-        
-        return 5;
-    
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
-        
-        let cell = UITableViewCell()
-
-            // Configure the cell (i.e. update UI elements like labels, image views, etc.)
-            // Get the row where the cell will be placed using the `row` property on the passed in `indexPath` (i.e., `indexPath.row`)
-            cell.textLabel?.text = "Row \(indexPath.row)"
-
-            // Return the cell for use in the respective table view row
-            return cell
-    
-    }
-    
-    func configureReceivedFlights(receivedFlights:ReceivedFlights)
-    {
-        self.gottenFlights = receivedFlights
-        
-        
-        
         print("-------------------------------------------------------------------------")
         print("-------------------------------------------------------------------------")
         print("flights have arrived!!")
         print("-------------------------------------------------------------------------")
         print("-------------------------------------------------------------------------")
         print(type(of: receivedFlights))
-        print("-------------------------------------------------------------------------")
-        print("-------------------------------------------------------------------------")
-        print("These are the best flights avaailable")
-        print(receivedFlights.bestFlights)
-        print("-------------------------------------------------------------------------")
-        print("-------------------------------------------------------------------------")
-        print("These are the other flights")
-        print(receivedFlights.otherFlights)
-
-        print("-------------------------------------------------------------------------")
-        print("-------------------------------------------------------------------------")
+        
         
     }
     
@@ -113,6 +151,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
             
             
             self.configureReceivedFlights(receivedFlights: receivedFlights)
+            self.flightsTableView.reloadData()
             
             
                 }

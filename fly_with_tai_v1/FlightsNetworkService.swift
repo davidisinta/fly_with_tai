@@ -16,7 +16,7 @@ class FlightsNetworkService{
 //        let parameters = "departure_id=CDG&arrival_id=NBO"
         
         
-            let url = URL(string: "https://serpapi.com/search.json?engine=google_flights&departure_id=JFK&arrival_id=NBO&outbound_date=2024-05-13&return_date=2024-08-19&currency=USD&hl=en&=&api_key=74cccf42c85e59add4a78297ece78471a30b5d18d133e279605fcbee6b5d5be3")!
+            let url = URL(string: "https://serpapi.com/search.json?engine=google_flights&departure_id=PEK&arrival_id=AUS&outbound_date=2024-05-13&return_date=2024-08-19&currency=USD&hl=en&=&api_key=74cccf42c85e59add4a78297ece78471a30b5d18d133e279605fcbee6b5d5be3")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             // Handle potential errors
@@ -148,7 +148,8 @@ struct SearchResults: Codable {
 }
 
 struct BestFlight: Codable {
-    let flights: [Flight]
+    let flights: [Flight]?
+    let layovers: [Layover]?
     let totalDuration: Int
     let carbonEmissions: CarbonEmissions
     let price: Int
@@ -157,7 +158,7 @@ struct BestFlight: Codable {
     let departureToken: String
 
     enum CodingKeys: String, CodingKey {
-        case flights
+        case flights, layovers
         case totalDuration = "total_duration"
         case carbonEmissions = "carbon_emissions"
         case price, type
@@ -179,13 +180,13 @@ struct CarbonEmissions: Codable {
 struct Flight: Codable {
     let departureAirport, arrivalAirport: Airport
     let duration: Int
-    let airplane: Airplane
+    let airplane: String
     let airline: String
     let airlineLogo: String
-    let travelClass: TravelClass
+    let travelClass: String
     let flightNumber: String
     let ticketAlsoSoldBy: [String]?
-    let legroom: Legroom
+    let legroom: String?
     let extensions: [String]
     let overnight: Bool?
 
@@ -201,29 +202,29 @@ struct Flight: Codable {
     }
 }
 
-enum Airplane: String, Codable {
-    case boeing777 = "Boeing 777"
-    case boeing787 = "Boeing 787"
-    case boeing78710 = "Boeing 787-10"
-}
+//enum Airplane: String, Codable {
+//    case boeing777 = "Boeing 777"
+//    case boeing787 = "Boeing 787"
+//    case boeing78710 = "Boeing 787-10"
+//}
 
 struct Airport: Codable {
     let name, id, time: String
 }
 
-enum Legroom: String, Codable {
-    case the31In = "31 in"
-    case the32In = "32 in"
-}
+//enum Legroom: String, Codable {
+//    case the31In = "31 in"
+//    case the32In = "32 in"
+//}
 
-enum TravelClass: String, Codable {
-    case economy = "Economy"
-}
+//enum TravelClass: String, Codable {
+//    case economy = "Economy"
+//}
 
 
 struct OtherFlight: Codable {
-    let flights: [Flight]
-    let layovers: [Layover]
+    let flights: [Flight]?
+    let layovers: [Layover]?
     let totalDuration: Int
     let carbonEmissions: CarbonEmissions
     let price: Int
