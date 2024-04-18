@@ -40,6 +40,22 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         
         flightsTableView.dataSource = self
         
+        FlightsNetworkService.fetchFlights() { receivedFlights in
+                    // Handle the received flights data here
+            
+            print("-------------------------------------------------------------------------")
+            print("-------------------------------------------------------------------------")
+            print("flights have arrived!!")
+            print("-------------------------------------------------------------------------")
+            print("-------------------------------------------------------------------------")
+            print(type(of: receivedFlights))
+            print("-------------------------------------------------------------------------")
+            print("-------------------------------------------------------------------------")
+            print()
+            print("-------------------------------------------------------------------------")
+            print("-------------------------------------------------------------------------")
+                }
+        
        
 
         // Do any additional setup after loading the view.
