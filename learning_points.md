@@ -1,0 +1,4 @@
+- Encoding and decoding received json from api requests is necessary
+- when json data is received it should be dispached to main queue
+- when you have a UI table view cell, you have to configure the class Name and identifier
+- Loading images with a given URL is asynchronous, image URLs received as strings should ideally be stored as URL objects
