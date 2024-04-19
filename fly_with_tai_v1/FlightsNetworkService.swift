@@ -52,27 +52,22 @@ class FlightsNetworkService{
                     let decoder = JSONDecoder()
                     let response = try! decoder.decode(SearchResults.self, from: data)
                     
-                    var bestFlightsArray: [BestFlight]?
-                    var otherFlightsArray: [OtherFlight]?
+                    var bestFlightsArray: [GenericFlight]?
+                    var otherFlightsArray: [GenericFlight]?
                     
                     
                     bestFlightsArray = response.bestFlights
                     otherFlightsArray = response.otherFlights
                     
                     
+                    var allFlights: [GenericFlight]?
                     
-                    // Adding a new key-value pair
-                    //airportCodes["SFO"] = "San Francisco
-//                    International Airport"
-                    
-                    var receivedFlights = ReceivedFlights(bestFlights: bestFlightsArray!, otherFlights: otherFlightsArray!)
+                    allFlights?.append(contentsOf: bestFlightsArray!)
+                    allFlights?.append(contentsOf: otherFlightsArray!)
 
                     
-                
-                    
-                    
-                    
-                    
+                    let receivedFlights = ReceivedFlights(allFlights: allFlights, bestFlights: bestFlightsArray,
+                                                          otherFlights: otherFlightsArray)
                     
                     
                     
@@ -117,9 +112,25 @@ class FlightsNetworkService{
 // we have 2 types of flights, best_flight & other_flight
 
 struct ReceivedFlights {
-    var bestFlights: [BestFlight]?
-    var otherFlights: [OtherFlight]?
+    
+    var allFlights: [GenericFlight]?
+    var bestFlights: [GenericFlight]?
+    var otherFlights: [GenericFlight]?
+    
+    
+    init(allFlights: [GenericFlight]?, bestFlights: [GenericFlight]?, otherFlights: [GenericFlight]?) {
+            self.allFlights = allFlights
+        self.bestFlights = bestFlights
+        self.otherFlights = otherFlights
+        
+        
+        
+        
+        
+        }
 }
+
+
 
 
 
@@ -141,8 +152,8 @@ struct ReceivedFlights {
 struct SearchResults: Codable {
     let searchMetadata: SearchMetadata
     let searchParameters: SearchParameters
-    let bestFlights: [BestFlight]
-    let otherFlights: [OtherFlight]
+    let bestFlights: [GenericFlight]
+    let otherFlights: [GenericFlight]
 
     enum CodingKeys: String, CodingKey {
         case searchMetadata = "search_metadata"
@@ -152,7 +163,7 @@ struct SearchResults: Codable {
     }
 }
 
-struct BestFlight: Codable {
+struct GenericFlight: Codable {
     let flights: [Flight]?
     let layovers: [Layover]?
     let totalDuration: Int
@@ -227,25 +238,25 @@ struct Airport: Codable {
 //}
 
 
-struct OtherFlight: Codable {
-    let flights: [Flight]?
-    let layovers: [Layover]?
-    let totalDuration: Int
-    let carbonEmissions: CarbonEmissions
-    let price: Int
-    let type: String
-    let airlineLogo: String
-    let departureToken: String
-
-    enum CodingKeys: String, CodingKey {
-        case flights, layovers
-        case totalDuration = "total_duration"
-        case carbonEmissions = "carbon_emissions"
-        case price, type
-        case airlineLogo = "airline_logo"
-        case departureToken = "departure_token"
-    }
-}
+//struct OtherFlight: Codable {
+//    let flights: [Flight]?
+//    let layovers: [Layover]?
+//    let totalDuration: Int
+//    let carbonEmissions: CarbonEmissions
+//    let price: Int
+//    let type: String
+//    let airlineLogo: String
+//    let departureToken: String
+//
+//    enum CodingKeys: String, CodingKey {
+//        case flights, layovers
+//        case totalDuration = "total_duration"
+//        case carbonEmissions = "carbon_emissions"
+//        case price, type
+//        case airlineLogo = "airline_logo"
+//        case departureToken = "departure_token"
+//    }
+//}
 
 
 struct Layover: Codable {

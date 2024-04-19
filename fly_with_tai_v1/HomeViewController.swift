@@ -12,13 +12,18 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     
     private var gottenFlights: ReceivedFlights?
     
+    
     @IBOutlet weak var flightsTableView: UITableView!
     
     
     var bestFlightsCount:Int?
     var otherFlighsCount: Int?
-    var bestFlights:[BestFlight]?
-    var otherFlights:[OtherFlight]?
+    
+    var bestFlights:[GenericFlight]?
+    var otherFlights:[GenericFlight]?
+    
+    var combinedFlights: [GenericFlight]?
+
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,16 +42,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FlightTableViewCell", for: indexPath) as! FlightTableViewCell
 
         
-        let flight = otherFlights?[indexPath.row]
-
-        
-        
-        
-        
-        
-        
-        
-        
+        let flight = combinedFlights?[indexPath.row]
         
         if let price = flight?.price {
             
@@ -55,7 +51,6 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         } else {
             print("The price of the flight is not available")
         }
-        
         
         
         if let flightUrlString = flight?.airlineLogo,
@@ -87,7 +82,6 @@ class HomeViewController: UIViewController, UITableViewDataSource {
             // Return the cell for use in the respective table view row
             return cell
 
-            
     
     }
     
@@ -96,13 +90,13 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         var bestCount: Int = 0;
         var otherCount: Int = 0;
         
-        if let results = self.bestFlightsCount
+        if self.bestFlightsCount != nil
         {
             bestCount = self.bestFlightsCount!
             
         }
         
-        if let results2 = self.otherFlighsCount
+        if self.otherFlighsCount != nil
         {
             otherCount = self.bestFlightsCount!
             
@@ -137,6 +131,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
             
             else{
                 //handle lack of best flights
+                print("There are no available best flights☹️")
             }
             
             
@@ -152,7 +147,27 @@ class HomeViewController: UIViewController, UITableViewDataSource {
             
             else{
                 //handle lack of other flights
+                print("There are no available other flights☹️")
             }
+            
+            
+            // Combine bestFlights and otherFlights into combinedFlights
+                    if let bestFlights = bestFlights, let otherFlights = otherFlights {
+                        var combinedFlights = bestFlights + otherFlights
+                        self.combinedFlights = combinedFlights
+                    } else if let bestFlights = bestFlights {
+                        self.combinedFlights = bestFlights
+                    } else if let otherFlights = otherFlights {
+                        self.combinedFlights = otherFlights
+                    } else {
+                        // Handle case where both bestFlights and otherFlights are nil
+                        // You might want to decide what to do in this case
+                    }
+            
+            
+            
+            
+
             
             
             
@@ -185,7 +200,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         
         flightsTableView.dataSource = self
         
-        FlightsNetworkService.fetchFlights(departureId: "JFK", arrivalId: "CDG", outboundDate: "2024-05-13", returnDate: "2024-08-19", currency: "USD", hl: "en", apiKey: "74cccf42c85e59add4a78297ece78471a30b5d18d133e279605fcbee6b5d5be3")
+        FlightsNetworkService.fetchFlights(departureId: "KUL", arrivalId: "SIN", outboundDate: "2024-05-13", returnDate: "2024-08-19", currency: "USD", hl: "en", apiKey: "74cccf42c85e59add4a78297ece78471a30b5d18d133e279605fcbee6b5d5be3")
  { receivedFlights in
                     // Handle the received flights data here
             
@@ -198,18 +213,9 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         
        
 
-        // Do any additional setup after loading the view.
+       
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  
 }
