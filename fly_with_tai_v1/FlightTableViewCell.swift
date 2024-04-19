@@ -7,7 +7,25 @@
 
 import UIKit
 
+
 class FlightTableViewCell: UITableViewCell {
+    
+    
+    
+    
+    @IBOutlet weak var airlineLogo: UIImageView!
+    
+    
+    
+    
+    @IBOutlet weak var flightPrice: UILabel!
+    
+    
+    
+    
+    
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

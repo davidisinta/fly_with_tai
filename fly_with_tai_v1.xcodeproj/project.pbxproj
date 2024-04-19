@@ -17,7 +17,6 @@
 		D8B5DE5C2BCE4A9C002205F9 /* fly_with_tai_v1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B5DE5B2BCE4A9C002205F9 /* fly_with_tai_v1UITests.swift */; };
 		D8B5DE5E2BCE4A9C002205F9 /* fly_with_tai_v1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B5DE5D2BCE4A9C002205F9 /* fly_with_tai_v1UITestsLaunchTests.swift */; };
 		D8B5DE6B2BCF589D002205F9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B5DE6A2BCF589D002205F9 /* HomeViewController.swift */; };
-		D8B5DE6D2BD0E8A7002205F9 /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B5DE6C2BD0E8A7002205F9 /* FlightModel.swift */; };
 		D8B5DE6F2BD0E954002205F9 /* FlightsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B5DE6E2BD0E954002205F9 /* FlightsNetworkService.swift */; };
 		D8B5DE712BD0F855002205F9 /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B5DE702BD0F855002205F9 /* FlightTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -54,7 +53,6 @@
 		D8B5DE5B2BCE4A9C002205F9 /* fly_with_tai_v1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fly_with_tai_v1UITests.swift; sourceTree = "<group>"; };
 		D8B5DE5D2BCE4A9C002205F9 /* fly_with_tai_v1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fly_with_tai_v1UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D8B5DE6A2BCF589D002205F9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		D8B5DE6C2BD0E8A7002205F9 /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
 		D8B5DE6E2BD0E954002205F9 /* FlightsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsNetworkService.swift; sourceTree = "<group>"; };
 		D8B5DE702BD0F855002205F9 /* FlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,7 +113,6 @@
 				D8B5DE452BCE4A9B002205F9 /* LaunchScreen.storyboard */,
 				D8B5DE482BCE4A9B002205F9 /* Info.plist */,
 				D8B5DE6A2BCF589D002205F9 /* HomeViewController.swift */,
-				D8B5DE6C2BD0E8A7002205F9 /* FlightModel.swift */,
 				D8B5DE6E2BD0E954002205F9 /* FlightsNetworkService.swift */,
 				D8B5DE702BD0F855002205F9 /* FlightTableViewCell.swift */,
 			);
@@ -271,7 +268,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8B5DE712BD0F855002205F9 /* FlightTableViewCell.swift in Sources */,
-				D8B5DE6D2BD0E8A7002205F9 /* FlightModel.swift in Sources */,
 				D8B5DE3F2BCE4A99002205F9 /* ViewController.swift in Sources */,
 				D8B5DE6F2BD0E954002205F9 /* FlightsNetworkService.swift in Sources */,
 				D8B5DE3B2BCE4A99002205F9 /* AppDelegate.swift in Sources */,

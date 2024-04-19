@@ -10,13 +10,18 @@ import Foundation
 class FlightsNetworkService{
     
     
-    static func fetchFlights(completion: ((ReceivedFlights) -> Void)? = nil) {
-            // Fetch flights asynchronously
+    static func fetchFlights(departureId: String, arrivalId: String, outboundDate: String, returnDate: String, currency: String, hl: String, apiKey: String, completion: ((ReceivedFlights) -> Void)? = nil) {
+            
         
-//        let parameters = "departure_id=CDG&arrival_id=NBO"
+        let baseURLString = "https://serpapi.com/search.json?engine=google_flights"
         
+            let parameters = "departure_id=\(departureId)&arrival_id=\(arrivalId)&outbound_date=\(outboundDate)&return_date=\(returnDate)&currency=\(currency)&hl=\(hl)&api_key=\(apiKey)"
+            
         
-            let url = URL(string: "https://serpapi.com/search.json?engine=google_flights&departure_id=PEK&arrival_id=AUS&outbound_date=2024-05-13&return_date=2024-08-19&currency=USD&hl=en&=&api_key=74cccf42c85e59add4a78297ece78471a30b5d18d133e279605fcbee6b5d5be3")!
+        guard let url = URL(string: "\(baseURLString)&\(parameters)") else {
+               print("Invalid URL")
+               return
+           }
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             // Handle potential errors

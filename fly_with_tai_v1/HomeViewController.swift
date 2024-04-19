@@ -30,19 +30,66 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
+       
         
-        let cell = UITableViewCell()
+        print("🍏 cellForRowAt called for row: \(indexPath.row)")
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FlightTableViewCell", for: indexPath) as! FlightTableViewCell
+
         
+        let flight = otherFlights?[indexPath.row]
 
-            // Get the movie-associated table view row
-            let flight = otherFlights?[indexPath.row]
-
-            // Configure the cell (i.e., update UI elements like labels, image views, etc.)
+        
+        
+        
+        
+        
+        
+        
+        
+        
         if let price = flight?.price {
-            cell.textLabel?.text = "The price of the flight is: \(price)"
+            
+            
+            cell.flightPrice.text = "\(price)"
         } else {
-            cell.textLabel?.text = "The price of the flight is not available"
+            print("The price of the flight is not available")
         }
+        
+        
+        
+        if let flightUrlString = flight?.airlineLogo,
+           let flightUrl = URL(string: flightUrlString) {
+            // Create a URLSession data task to fetch the image data
+            URLSession.shared.dataTask(with: flightUrl) { data, response, error in
+                // Check for errors
+                if let error = error {
+                    print("Error loading image: \(error)")
+                    return
+                }
+                
+                // Ensure there is data and it can be converted to an image
+                guard let data = data, let image = UIImage(data: data) else {
+                    print("Invalid image data")
+                    return
+                }
+                
+                // Update the UI on the main thread
+                DispatchQueue.main.async {
+                    // Set the downloaded image to the UIImageView
+                    cell.airlineLogo.image = image
+                }
+            }.resume() // Start the data task
+        }
+
+        
+        
+        
+        
+        
+        
+        
+
 
 
             // Return the cell for use in the respective table view row
@@ -146,7 +193,8 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         
         flightsTableView.dataSource = self
         
-        FlightsNetworkService.fetchFlights() { receivedFlights in
+        FlightsNetworkService.fetchFlights(departureId: "JFK", arrivalId: "CDG", outboundDate: "2024-05-13", returnDate: "2024-08-19", currency: "USD", hl: "en", apiKey: "74cccf42c85e59add4a78297ece78471a30b5d18d133e279605fcbee6b5d5be3")
+ { receivedFlights in
                     // Handle the received flights data here
             
             
