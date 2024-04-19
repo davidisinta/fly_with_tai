@@ -29,21 +29,31 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ezZ-xN-kJX">
-                                                    <rect key="frame" x="20" y="29" width="82" height="63"/>
+                                                    <rect key="frame" x="20" y="11" width="47" height="46"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zf-au-3JF">
-                                                    <rect key="frame" x="225" y="29" width="116" height="97"/>
+                                                    <rect key="frame" x="255" y="11" width="94" height="71"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwL-8M-LBt">
+                                                    <rect key="frame" x="257" y="117" width="90" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Track!"/>
+                                                    <connections>
+                                                        <action selector="trackButtonOnClick:" destination="Hbd-5g-Xf0" eventType="touchUpInside" id="d78-r0-m9T"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="airlineLogo" destination="ezZ-xN-kJX" id="c5o-sk-dH2"/>
                                             <outlet property="flightPrice" destination="1zf-au-3JF" id="ctR-tp-wBZ"/>
+                                            <outlet property="trackButton" destination="CwL-8M-LBt" id="qFr-fh-zi0"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

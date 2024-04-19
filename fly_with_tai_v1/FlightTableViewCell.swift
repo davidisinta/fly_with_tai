@@ -22,7 +22,10 @@ class FlightTableViewCell: UITableViewCell {
     
     
     
+    @IBOutlet weak var trackButton: UIButton!
     
+    @IBAction func trackButtonOnClick(_ sender: Any) {
+    }
     
     
     
