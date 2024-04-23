@@ -143,11 +143,11 @@ The Flight Bookings & Price Tracking app allows users to seamlessly search for a
 ## Video Walkthough
 
 <div>
-    <a href="https://www.loom.com/share/9957ba47330d427695997461b85988a6">
-      <p>Library | Loom - 16 April 2024 - Watch Video</p>
+    <a href="https://www.loom.com/share/c694dd16578a45dfb4050c0b87897ec7">
+      <p>Library | Loom - 23 April 2024 - Watch Video</p>
     </a>
-    <a href="https://www.loom.com/share/9957ba47330d427695997461b85988a6">
-      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/9957ba47330d427695997461b85988a6-with-play.gif">
+    <a href="https://www.loom.com/share/c694dd16578a45dfb4050c0b87897ec7">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/c694dd16578a45dfb4050c0b87897ec7-with-play.gif">
     </a>
   </div>
 
