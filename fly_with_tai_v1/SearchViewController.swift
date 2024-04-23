@@ -10,6 +10,32 @@
 import UIKit
 
 class SearchViewController: UIViewController {
+    
+    
+    
+    var departureDate:String?
+    var arrivalDate:String?
+    var flightType:String?
+    var departureAirport:String?
+    var arrivalAirport:String?
+    var cabinType:String?
+    var passengers:Int?
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     let datePicker = UIDatePicker()
     @IBOutlet weak var departureDateButton: UIButton!
@@ -21,13 +47,38 @@ class SearchViewController: UIViewController {
     
     
     
-    func configureButtons(){
+    @IBOutlet weak var returnDate: UIButton!
+    
+    @IBAction func returnDateOnClick(_ sender: Any) {
         
+        print("arrival button clicked")
+        datePicker.isHidden = !datePicker.isHidden
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    func configureButtons() {
+        // Configure departure date button
         departureDateButton.setImage(UIImage(systemName: "calendar"), for: .normal)
         departureDateButton.addTarget(self, action: #selector(departureDateOnClick(_:)), for: .touchUpInside)
         
+        // Configure return date button
+        returnDate.setImage(UIImage(systemName: "calendar"), for: .normal)
+        returnDate.addTarget(self, action: #selector(returnDateOnClick(_:)), for: .touchUpInside)
+        
         // Set up date picker
         datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .compact // or .inline
         datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
         view.addSubview(datePicker)
         
@@ -38,12 +89,11 @@ class SearchViewController: UIViewController {
             datePicker.topAnchor.constraint(equalTo: departureDateButton.bottomAnchor, constant: 0.001),
             datePicker.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
-    
-
-            // Hide date picker initially
-            datePicker.isHidden = true
         
+        // Hide date picker initially
+        datePicker.isHidden = true
     }
+
     
     
     
