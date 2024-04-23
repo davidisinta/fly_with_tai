@@ -102,6 +102,43 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         
         
 //        at the last flight get arrival location and time
+        if let lastFlight = flights?[(flights?.count ?? 0)-1]{
+            let arrivalLocation = lastFlight.arrivalAirport
+            
+//            struct Airport: Codable {
+//                let name, id, time: String
+//            }
+            
+            let airportName = arrivalLocation.id
+            
+           
+            
+            let departureTimeString = arrivalLocation.time
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+
+            if let departureTime = dateFormatter.date(from: departureTimeString) {
+                dateFormatter.dateFormat = "HH:mm"
+                let formattedTime = dateFormatter.string(from: departureTime)
+                cell.arrivalTime.text = "\(formattedTime)"
+                print(formattedTime)
+            } else {
+                print("Invalid date format for departure time")
+            }
+
+
+            
+            
+            cell.arrivalLocation.text = "\(airportName)"
+           
+            
+            
+            
+            
+            
+            
+            
+        }
         
         
         
