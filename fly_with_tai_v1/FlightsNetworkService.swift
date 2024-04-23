@@ -70,13 +70,11 @@ class FlightsNetworkService{
                                                           otherFlights: otherFlightsArray)
                     
                     
-                    
                     DispatchQueue.main.async {
                         
                         
                         completion?(receivedFlights)
                     }
-                    
                     
                      
 //                     completion?(receivedFlights)
@@ -88,28 +86,13 @@ class FlightsNetworkService{
             }
         }
         task.resume() // Resume the task and fire the request
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
             
         }
     
     
-    
 }
 
-
-// we want to return to the view a dict of flights,
-// we have 2 types of flights, best_flight & other_flight
 
 struct ReceivedFlights {
     
@@ -124,29 +107,8 @@ struct ReceivedFlights {
         self.otherFlights = otherFlights
         
         
-        
-        
-        
         }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// -----------
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//
 
 
 struct SearchResults: Codable {
@@ -218,45 +180,9 @@ struct Flight: Codable {
     }
 }
 
-//enum Airplane: String, Codable {
-//    case boeing777 = "Boeing 777"
-//    case boeing787 = "Boeing 787"
-//    case boeing78710 = "Boeing 787-10"
-//}
-
 struct Airport: Codable {
     let name, id, time: String
 }
-
-//enum Legroom: String, Codable {
-//    case the31In = "31 in"
-//    case the32In = "32 in"
-//}
-
-//enum TravelClass: String, Codable {
-//    case economy = "Economy"
-//}
-
-
-//struct OtherFlight: Codable {
-//    let flights: [Flight]?
-//    let layovers: [Layover]?
-//    let totalDuration: Int
-//    let carbonEmissions: CarbonEmissions
-//    let price: Int
-//    let type: String
-//    let airlineLogo: String
-//    let departureToken: String
-//
-//    enum CodingKeys: String, CodingKey {
-//        case flights, layovers
-//        case totalDuration = "total_duration"
-//        case carbonEmissions = "carbon_emissions"
-//        case price, type
-//        case airlineLogo = "airline_logo"
-//        case departureToken = "departure_token"
-//    }
-//}
 
 
 struct Layover: Codable {

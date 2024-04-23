@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D82D49542BD781B100CFDD0F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82D49532BD781B100CFDD0F /* ProfileViewController.swift */; };
+		D82D49562BD789E400CFDD0F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82D49552BD789E400CFDD0F /* SearchViewController.swift */; };
 		D8B5DE3B2BCE4A99002205F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B5DE3A2BCE4A99002205F9 /* AppDelegate.swift */; };
 		D8B5DE3D2BCE4A99002205F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B5DE3C2BCE4A99002205F9 /* SceneDelegate.swift */; };
 		D8B5DE3F2BCE4A99002205F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B5DE3E2BCE4A99002205F9 /* ViewController.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D82D49532BD781B100CFDD0F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D82D49552BD789E400CFDD0F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D8B5DE372BCE4A99002205F9 /* fly_with_tai_v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fly_with_tai_v1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B5DE3A2BCE4A99002205F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8B5DE3C2BCE4A99002205F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 				D8B5DE6A2BCF589D002205F9 /* HomeViewController.swift */,
 				D8B5DE6E2BD0E954002205F9 /* FlightsNetworkService.swift */,
 				D8B5DE702BD0F855002205F9 /* FlightTableViewCell.swift */,
+				D82D49532BD781B100CFDD0F /* ProfileViewController.swift */,
+				D82D49552BD789E400CFDD0F /* SearchViewController.swift */,
 			);
 			path = fly_with_tai_v1;
 			sourceTree = "<group>";
@@ -269,8 +275,10 @@
 			files = (
 				D8B5DE712BD0F855002205F9 /* FlightTableViewCell.swift in Sources */,
 				D8B5DE3F2BCE4A99002205F9 /* ViewController.swift in Sources */,
+				D82D49562BD789E400CFDD0F /* SearchViewController.swift in Sources */,
 				D8B5DE6F2BD0E954002205F9 /* FlightsNetworkService.swift in Sources */,
 				D8B5DE3B2BCE4A99002205F9 /* AppDelegate.swift in Sources */,
+				D82D49542BD781B100CFDD0F /* ProfileViewController.swift in Sources */,
 				D8B5DE3D2BCE4A99002205F9 /* SceneDelegate.swift in Sources */,
 				D8B5DE6B2BCF589D002205F9 /* HomeViewController.swift in Sources */,
 			);
