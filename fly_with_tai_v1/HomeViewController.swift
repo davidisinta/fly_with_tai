@@ -52,6 +52,94 @@ class HomeViewController: UIViewController, UITableViewDataSource {
             print("The price of the flight is not available")
         }
         
+        let flights = flight?.flights
+        
+        
+        let airline_name = flights?[0].airline
+        cell.airlineName.text = airline_name
+        
+        
+//        get the first flight in the array of flights,
+//        at the first flight, get departure location and time
+        
+        if let firstFlight = flights?[0]{
+            let departureLocation = firstFlight.departureAirport
+            
+//            struct Airport: Codable {
+//                let name, id, time: String
+//            }
+            
+            let airportName = departureLocation.id
+            
+           
+            
+            let departureTimeString = departureLocation.time
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+
+            if let departureTime = dateFormatter.date(from: departureTimeString) {
+                dateFormatter.dateFormat = "HH:mm"
+                let formattedTime = dateFormatter.string(from: departureTime)
+                cell.departureTime.text = "\(formattedTime)"
+                print(formattedTime)
+            } else {
+                print("Invalid date format for departure time")
+            }
+
+
+            
+            
+            cell.dapartureLocation.text = "\(airportName)"
+            
+            
+            
+            
+            
+            
+            
+        }
+        
+        
+        
+//        at the last flight get arrival location and time
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        if let layovers = flight?.layovers?.count{
+            
+            cell.additionalInfo.text = "\(layovers)"
+            cell.additionalInfo.isHidden = false
+            
+        }
+        
+        
+
+    
+        
+        
+        
+        
+        
+        
+        
+ 
+        
         
         if let flightUrlString = flight?.airlineLogo,
            let flightUrl = URL(string: flightUrlString) {

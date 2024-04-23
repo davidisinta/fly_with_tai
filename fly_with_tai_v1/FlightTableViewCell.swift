@@ -14,15 +14,21 @@ class FlightTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var airlineLogo: UIImageView!
-    
-    
-    
-    
+    @IBOutlet weak var airlineName: UILabel!
     @IBOutlet weak var flightPrice: UILabel!
-    
-    
-    
     @IBOutlet weak var trackButton: UIButton!
+    
+    
+    
+    @IBOutlet weak var departureTime: UILabel!
+    
+    @IBOutlet weak var arrivalTime: UILabel!
+    
+    @IBOutlet weak var dapartureLocation: UILabel!
+    
+    @IBOutlet weak var arrivalLocation: UILabel!
+    
+    @IBOutlet weak var additionalInfo: UILabel!
     
     @IBAction func trackButtonOnClick(_ sender: Any) {
     }
