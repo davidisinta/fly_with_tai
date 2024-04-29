@@ -262,6 +262,9 @@
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Search!!"/>
+                                <connections>
+                                    <action selector="searchButtonOnClick:" destination="Y6S-3Z-sdY" eventType="touchUpInside" id="JLq-Lt-89q"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Jj-UV-Bsw"/>
@@ -269,7 +272,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="Qcz-ej-dHF"/>
                     <connections>
+                        <outlet property="arrivaleAirportField" destination="Bsu-Ix-uMu" id="2U8-Cl-XWw"/>
+                        <outlet property="cabinTypeField" destination="COW-ZH-Fdc" id="zhX-Nv-Bcq"/>
+                        <outlet property="departtureAirportField" destination="Myk-eK-qEb" id="gpJ-YF-P6r"/>
                         <outlet property="departureDateButton" destination="k2d-8I-qTE" id="cL8-OR-EGI"/>
+                        <outlet property="flightTypeTextField" destination="yYb-hL-uGp" id="81B-r4-pz5"/>
+                        <outlet property="passengersField" destination="sW7-eP-v6l" id="Bsu-Xs-Erk"/>
                         <outlet property="returnDate" destination="E0o-w0-qO6" id="nlM-Em-Jwf"/>
                     </connections>
                 </viewController>

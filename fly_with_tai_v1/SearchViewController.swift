@@ -23,13 +23,28 @@ class SearchViewController: UIViewController {
     
     
     
+    @IBOutlet weak var flightTypeTextField: UITextField!
+    
+    @IBOutlet weak var departtureAirportField: UITextField!
+    
+    @IBOutlet weak var arrivaleAirportField: UITextField!
+    
+    @IBOutlet weak var cabinTypeField: UITextField!
+    
+    
+    @IBOutlet weak var passengersField: UITextField!
     
     
     
     
-    
-    
-    
+    @IBAction func searchButtonOnClick(_ sender: Any) 
+    {
+        
+        FlightsNetworkService.fetchFlights(departureId: departtureAirportField.text!, arrivalId: arrivaleAirportField.text!, outboundDate: "2024-05-13", returnDate: "2024-08-19", currency: "USD", hl: "en", apiKey: "74cccf42c85e59add4a78297ece78471a30b5d18d133e279605fcbee6b5d5be3")
+        
+        
+        
+    }
     
     
     
@@ -54,16 +69,6 @@ class SearchViewController: UIViewController {
         print("arrival button clicked")
         datePicker.isHidden = !datePicker.isHidden
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -94,18 +99,11 @@ class SearchViewController: UIViewController {
         datePicker.isHidden = true
     }
 
-    
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         self.configureButtons()
         
-
-                
     }
     
 
