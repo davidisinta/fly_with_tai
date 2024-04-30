@@ -65,7 +65,7 @@ The Flight Bookings & Price Tracking app allows users to seamlessly search for a
 
 - [X] User can seamlessly navigate between different tabs
 - [ ] User can track flight prices
-- [ ] User can search for flights
+- [X] User can search for flights
 - [ ] User can view flight details
 - [ ] User can be redirected to a payment page to buy a ticket
 - [X] User can see a list of all flights that match the search parameters
