@@ -40,6 +40,11 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         print("🍏 cellForRowAt called for row: \(indexPath.row)")
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "FlightTableViewCell", for: indexPath) as! FlightTableViewCell
+        
+        
+        print("no of best flights is: \(String(describing: bestFlights?.count))");
+        print("no of other flights is: \(String(describing: otherFlights?.count))");
+        print("no of combined flights is: \(String(describing: combinedFlights?.count))");
 
         
         let flight = combinedFlights?[indexPath.row]
@@ -325,7 +330,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         
         flightsTableView.dataSource = self
         
-        FlightsNetworkService.fetchFlights(departureId: "KUL", arrivalId: "SIN", outboundDate: "2024-05-13", returnDate: "2024-08-19", currency: "USD", hl: "en", apiKey: "74cccf42c85e59add4a78297ece78471a30b5d18d133e279605fcbee6b5d5be3")
+        FlightsNetworkService.fetchFlights(departureId: "NBO", arrivalId: "MIA", outboundDate: "2024-05-13", returnDate: "2024-08-19", currency: "USD", hl: "en", apiKey: "74cccf42c85e59add4a78297ece78471a30b5d18d133e279605fcbee6b5d5be3")
  { receivedFlights in
                     // Handle the received flights data here
             

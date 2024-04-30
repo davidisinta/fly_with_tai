@@ -22,6 +22,7 @@
 		D8B5DE6F2BD0E954002205F9 /* FlightsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B5DE6E2BD0E954002205F9 /* FlightsNetworkService.swift */; };
 		D8B5DE712BD0F855002205F9 /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B5DE702BD0F855002205F9 /* FlightTableViewCell.swift */; };
 		D8B6A5CA2BE06AF1006F4117 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6A5C92BE06AF1006F4117 /* ReusableView.swift */; };
+		D8B6A5CC2BE06B89006F4117 /* helloHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B6A5CB2BE06B89006F4117 /* helloHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		D8B5DE6E2BD0E954002205F9 /* FlightsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsNetworkService.swift; sourceTree = "<group>"; };
 		D8B5DE702BD0F855002205F9 /* FlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
 		D8B6A5C92BE06AF1006F4117 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		D8B6A5CB2BE06B89006F4117 /* helloHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = helloHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				D82D49532BD781B100CFDD0F /* ProfileViewController.swift */,
 				D82D49552BD789E400CFDD0F /* SearchViewController.swift */,
 				D8B6A5C92BE06AF1006F4117 /* ReusableView.swift */,
+				D8B6A5CB2BE06B89006F4117 /* helloHeaderView.xib */,
 			);
 			path = fly_with_tai_v1;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8B6A5CC2BE06B89006F4117 /* helloHeaderView.xib in Resources */,
 				D8B5DE472BCE4A9B002205F9 /* LaunchScreen.storyboard in Resources */,
 				D8B5DE442BCE4A9B002205F9 /* Assets.xcassets in Resources */,
 				D8B5DE422BCE4A99002205F9 /* Main.storyboard in Resources */,
