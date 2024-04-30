@@ -89,7 +89,7 @@ The Flight Bookings & Price Tracking app allows users to seamlessly search for a
 * user can search for flights
 
 
-- [ X] Stream
+- [X] Stream
 * user can see a list of all flights that match the search parameters.
 
 - [ ] Detail
