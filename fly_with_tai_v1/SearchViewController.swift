@@ -37,14 +37,29 @@ class SearchViewController: UIViewController {
     
     
     
-    @IBAction func searchButtonOnClick(_ sender: Any) 
+    @IBAction func searchButtonOnClick(_ sender: Any)
     {
-        
-        FlightsNetworkService.fetchFlights(departureId: departtureAirportField.text!, arrivalId: arrivaleAirportField.text!, outboundDate: "2024-05-13", returnDate: "2024-08-19", currency: "USD", hl: "en", apiKey: "74cccf42c85e59add4a78297ece78471a30b5d18d133e279605fcbee6b5d5be3")
-        
-        
+            
         
     }
+    
+    
+       
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) 
+    {
+        if segue.identifier == "showResultsSegue",
+           let destinationVC = segue.destination as? HomeViewController {
+            destinationVC.departureId = departtureAirportField.text ?? ""
+            destinationVC.arrivalId = arrivaleAirportField.text ?? ""
+            destinationVC.outboundDate = "2024-05-13" 
+            destinationVC.returnDate = "2024-08-19"
+            destinationVC.currency = "USD"
+            destinationVC.hl = "en"
+            destinationVC.apiKey = "74cccf42c85e59add4a78297ece78471a30b5d18d133e279605fcbee6b5d5be3"
+        }
+    }
+
     
     
     
