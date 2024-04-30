@@ -11,24 +11,31 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     
     
     private var gottenFlights: ReceivedFlights?
-    
-    
     @IBOutlet weak var flightsTableView: UITableView!
     
     
     var bestFlightsCount:Int?
     var otherFlighsCount: Int?
-    
     var bestFlights:[GenericFlight]?
     var otherFlights:[GenericFlight]?
-    
     var combinedFlights: [GenericFlight]?
+    
+    
+    
+        var departureId: String = "NBO"
+        var arrivalId: String = "MIA"
+        var outboundDate: String = "2024-05-13"
+        var returnDate: String = "2024-08-19"
+        var currency: String = "USD"
+        var hl: String = "en"
+        var apiKey: String = "74cccf42c85e59add4a78297ece78471a30b5d18d133e279605fcbee6b5d5be3"
+        
 
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-        
         return getNumberOfFlights();
     
     }
@@ -36,7 +43,6 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
        
-        
         print("🍏 cellForRowAt called for row: \(indexPath.row)")
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "FlightTableViewCell", for: indexPath) as! FlightTableViewCell
@@ -76,8 +82,6 @@ class HomeViewController: UIViewController, UITableViewDataSource {
             
             let airportName = departureLocation.id
             
-           
-            
             let departureTimeString = departureLocation.time
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
@@ -92,27 +96,15 @@ class HomeViewController: UIViewController, UITableViewDataSource {
             }
 
 
-            
-            
             cell.dapartureLocation.text = "\(airportName)"
             
-            
-            
-            
-            
-            
-            
+    
         }
         
         
-        
-//        at the last flight get arrival location and time
+ 
         if let lastFlight = flights?[(flights?.count ?? 0)-1]{
             let arrivalLocation = lastFlight.arrivalAirport
-            
-//            struct Airport: Codable {
-//                let name, id, time: String
-//            }
             
             let airportName = arrivalLocation.id
             
@@ -131,36 +123,11 @@ class HomeViewController: UIViewController, UITableViewDataSource {
                 print("Invalid date format for departure time")
             }
 
-
-            
-            
             cell.arrivalLocation.text = "\(airportName)"
            
             
             
-            
-            
-            
-            
-            
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         
         if let layovers = flight?.layovers?.count{
@@ -169,18 +136,6 @@ class HomeViewController: UIViewController, UITableViewDataSource {
             cell.additionalInfo.isHidden = false
             
         }
-        
-        
-
-    
-        
-        
-        
-        
-        
-        
-        
- 
         
         
         if let flightUrlString = flight?.airlineLogo,
@@ -207,13 +162,12 @@ class HomeViewController: UIViewController, UITableViewDataSource {
             }.resume() // Start the data task
         }
 
-        
-
             // Return the cell for use in the respective table view row
             return cell
 
     
     }
+    
     
     func getNumberOfFlights()->Int{
         
@@ -237,16 +191,13 @@ class HomeViewController: UIViewController, UITableViewDataSource {
             print("Total number of received flights is: \(totalCount)")
             
             return totalCount
-        
-        
-        
-        
+    
     }
+    
     
     func configureReceivedFlights(receivedFlights:ReceivedFlights)
     {
         self.gottenFlights = receivedFlights
-        
         
         if let receivedFlights = gottenFlights {
             
@@ -263,8 +214,6 @@ class HomeViewController: UIViewController, UITableViewDataSource {
                 //handle lack of best flights
                 print("There are no available best flights☹️")
             }
-            
-            
             
             if let otherFlights = receivedFlights.otherFlights{
                 //handle other flights
@@ -296,14 +245,6 @@ class HomeViewController: UIViewController, UITableViewDataSource {
             
             
             
-            
-
-            
-            
-            
-            
-            
-            
         } else {
             print("************************************************")
             print("There are no flights buddy!!")
@@ -322,6 +263,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         
     }
     
+
     
 
     override func viewDidLoad() 
@@ -329,22 +271,22 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         flightsTableView.dataSource = self
+        fetchFlights()
         
-        FlightsNetworkService.fetchFlights(departureId: "NBO", arrivalId: "MIA", outboundDate: "2024-05-13", returnDate: "2024-08-19", currency: "USD", hl: "en", apiKey: "74cccf42c85e59add4a78297ece78471a30b5d18d133e279605fcbee6b5d5be3")
- { receivedFlights in
-                    // Handle the received flights data here
-            
-            
-            self.configureReceivedFlights(receivedFlights: receivedFlights)
-            self.flightsTableView.reloadData()
-            
-            
-                }
+        
         
        
 
        
     }
+    
+    
+    func fetchFlights() {
+            FlightsNetworkService.fetchFlights(departureId: departureId, arrivalId: arrivalId, outboundDate: outboundDate, returnDate: returnDate, currency: currency, hl: hl, apiKey: apiKey) { receivedFlights in
+                self.configureReceivedFlights(receivedFlights: receivedFlights)
+                self.flightsTableView.reloadData()
+            }
+        }
     
 
   
