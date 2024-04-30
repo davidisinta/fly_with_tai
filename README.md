@@ -85,11 +85,11 @@ The Flight Bookings & Price Tracking app allows users to seamlessly search for a
 - [ ] Login / Register
 * User signs up or logs into their account
 
-- [ ] Search
+- [X] Search
 * user can search for flights
 
 
-- [ ] Stream
+- [ X] Stream
 * user can see a list of all flights that match the search parameters.
 
 - [ ] Detail
@@ -143,11 +143,11 @@ The Flight Bookings & Price Tracking app allows users to seamlessly search for a
 ## Video Walkthough
 
 <div>
-    <a href="https://www.loom.com/share/c694dd16578a45dfb4050c0b87897ec7">
-      <p>Library | Loom - 23 April 2024 - Watch Video</p>
+    <a href="https://www.loom.com/share/15200e73a3304138a94e1c5659da516e">
+      <p>Library | Loom - 30 April 2024 - Watch Video</p>
     </a>
-    <a href="https://www.loom.com/share/c694dd16578a45dfb4050c0b87897ec7">
-      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/c694dd16578a45dfb4050c0b87897ec7-with-play.gif">
+    <a href="https://www.loom.com/share/15200e73a3304138a94e1c5659da516e">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/15200e73a3304138a94e1c5659da516e-with-play.gif">
     </a>
   </div>
 
