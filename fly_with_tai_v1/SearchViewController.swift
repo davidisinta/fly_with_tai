@@ -36,12 +36,29 @@ class SearchViewController: UIViewController {
     
     
     
+    @IBOutlet weak var originStackView: UIStackView!
     
     @IBAction func searchButtonOnClick(_ sender: Any)
     {
             
         
     }
+    
+    func addBottomBorder(to stackView: UIStackView, withSpacing spacing: CGFloat) {
+        let borderView = UIView()
+        borderView.backgroundColor = .black  // Set the border color
+        borderView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(borderView)
+        
+        NSLayoutConstraint.activate([
+            borderView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: spacing),  // Adjust spacing here
+            borderView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),  // Align left
+            borderView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),  // Align right
+            borderView.heightAnchor.constraint(equalToConstant: 1)  // Border thickness
+        ])
+    }
+
+
     
     
        
@@ -52,7 +69,7 @@ class SearchViewController: UIViewController {
            let destinationVC = segue.destination as? HomeViewController {
             destinationVC.departureId = departtureAirportField.text ?? ""
             destinationVC.arrivalId = arrivaleAirportField.text ?? ""
-            destinationVC.outboundDate = "2024-06-13" 
+            destinationVC.outboundDate = "2024-06-13"
             destinationVC.returnDate = "2024-08-19"
             destinationVC.currency = "USD"
             destinationVC.hl = "en"
@@ -87,38 +104,20 @@ class SearchViewController: UIViewController {
     
     
     
-    func configureButtons() {
-        // Configure departure date button
+    func configureButtons() 
+    {
+        
         departureDateButton.setImage(UIImage(systemName: "calendar"), for: .normal)
-        departureDateButton.addTarget(self, action: #selector(departureDateOnClick(_:)), for: .touchUpInside)
-        
-        // Configure return date button
-        returnDate.setImage(UIImage(systemName: "calendar"), for: .normal)
-        returnDate.addTarget(self, action: #selector(returnDateOnClick(_:)), for: .touchUpInside)
-        
-        // Set up date picker
-        datePicker.datePickerMode = .date
-        datePicker.preferredDatePickerStyle = .compact // or .inline
-        datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
-        view.addSubview(datePicker)
-        
-        // Layout
-        datePicker.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            datePicker.topAnchor.constraint(equalTo: departureDateButton.bottomAnchor, constant: 0.001),
-            datePicker.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
-        
-        // Hide date picker initially
-        datePicker.isHidden = true
+
     }
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureButtons()
-        
+        // Add the bottom border with custom spacing below the stack view
+        addBottomBorder(to: originStackView, withSpacing: 10)
+
     }
     
 
