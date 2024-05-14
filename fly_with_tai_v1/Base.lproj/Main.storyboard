@@ -301,7 +301,7 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Search!!"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Search"/>
                                         <connections>
                                             <action selector="searchButtonOnClick:" destination="Y6S-3Z-sdY" eventType="touchUpInside" id="JLq-Lt-89q"/>
                                             <segue destination="BYZ-38-t0r" kind="show" identifier="showResultsSegue" destinationCreationSelector="nifty" id="dvr-Fo-vXp"/>
@@ -310,8 +310,17 @@
                                 </subviews>
                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                 <constraints>
+                                    <constraint firstItem="UJQ-CM-Z3m" firstAttribute="top" secondItem="hJ2-el-a5w" secondAttribute="bottom" constant="10" id="6oW-fj-xJO"/>
+                                    <constraint firstItem="hJ2-el-a5w" firstAttribute="top" secondItem="6i5-Jm-zjy" secondAttribute="bottom" constant="10" id="7kA-TH-SzF"/>
+                                    <constraint firstItem="6i5-Jm-zjy" firstAttribute="top" secondItem="9Ve-iE-XYR" secondAttribute="top" constant="10" id="80f-kE-WBc"/>
+                                    <constraint firstItem="hJ2-el-a5w" firstAttribute="top" secondItem="6i5-Jm-zjy" secondAttribute="bottom" constant="10" id="EB9-IM-ug3"/>
                                     <constraint firstAttribute="width" constant="300" id="HhE-28-V3e"/>
+                                    <constraint firstItem="UJQ-CM-Z3m" firstAttribute="top" secondItem="hJ2-el-a5w" secondAttribute="bottom" constant="10" id="Kyj-u3-uzE"/>
+                                    <constraint firstItem="Qwf-N8-wcn" firstAttribute="top" secondItem="UJQ-CM-Z3m" secondAttribute="bottom" constant="10" id="UZl-4L-Lzd"/>
+                                    <constraint firstItem="Qwf-N8-wcn" firstAttribute="top" secondItem="UJQ-CM-Z3m" secondAttribute="bottom" constant="10" id="YwN-N7-pV2"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="fu8-Eb-kVw"/>
+                                    <constraint firstItem="UZT-p1-bzr" firstAttribute="top" secondItem="Qwf-N8-wcn" secondAttribute="bottom" constant="10" id="jp2-Ff-zWW"/>
+                                    <constraint firstItem="UZT-p1-bzr" firstAttribute="top" secondItem="Qwf-N8-wcn" secondAttribute="bottom" constant="10" id="rre-oL-oph"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -330,6 +339,7 @@
                         <outlet property="cabinTypeField" destination="COW-ZH-Fdc" id="zhX-Nv-Bcq"/>
                         <outlet property="departtureAirportField" destination="Myk-eK-qEb" id="gpJ-YF-P6r"/>
                         <outlet property="departureDateButton" destination="k2d-8I-qTE" id="cL8-OR-EGI"/>
+                        <outlet property="originStackView" destination="hJ2-el-a5w" id="xil-18-sRN"/>
                         <outlet property="passengersField" destination="sW7-eP-v6l" id="Bsu-Xs-Erk"/>
                     </connections>
                 </viewController>

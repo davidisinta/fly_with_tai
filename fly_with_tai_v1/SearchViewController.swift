@@ -36,12 +36,29 @@ class SearchViewController: UIViewController {
     
     
     
+    @IBOutlet weak var originStackView: UIStackView!
     
     @IBAction func searchButtonOnClick(_ sender: Any)
     {
             
         
     }
+    
+    func addBottomBorder(to stackView: UIStackView, withSpacing spacing: CGFloat) {
+        let borderView = UIView()
+        borderView.backgroundColor = .black  // Set the border color
+        borderView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(borderView)
+        
+        NSLayoutConstraint.activate([
+            borderView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: spacing),  // Adjust spacing here
+            borderView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),  // Align left
+            borderView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),  // Align right
+            borderView.heightAnchor.constraint(equalToConstant: 1)  // Border thickness
+        ])
+    }
+
+
     
     
        
@@ -98,7 +115,9 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureButtons()
-        
+        // Add the bottom border with custom spacing below the stack view
+        addBottomBorder(to: originStackView, withSpacing: 10)
+
     }
     
 
