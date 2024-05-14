@@ -288,6 +288,14 @@
                                 <rect key="frame" x="20" y="216" width="337" height="396"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </datePicker>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4dh-Lo-gJf">
+                                <rect key="frame" x="32" y="119" width="364" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Departure"/>
+                                    <segment title="Return"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="O8Q-35-RVF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -296,7 +304,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XvF-2Z-wDB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="717" y="-200"/>
+            <point key="canvasLocation" x="715.81395348837214" y="-200.21459227467813"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gCf-jV-nVA">
@@ -332,7 +340,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="iEH-Et-MfS">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kyB-6O-nNe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="1qT-Bm-obN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4bo-uO-sJ5">
@@ -346,6 +353,7 @@
                         <segue destination="oXY-LT-8rl" kind="relationship" relationship="viewControllers" id="giy-w0-G7u"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kyB-6O-nNe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1295" y="-1680"/>
         </scene>
