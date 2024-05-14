@@ -151,9 +151,3 @@ The Flight Bookings & Price Tracking app allows users to seamlessly search for a
     </a>
   </div>
 
-### progress statement:
-I implemented the tab navigation and flow navigation for the app.
-
-  
-
-
