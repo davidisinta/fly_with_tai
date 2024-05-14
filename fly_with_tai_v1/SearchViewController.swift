@@ -92,10 +92,6 @@ class SearchViewController: UIViewController {
         departureDateButton.setImage(UIImage(systemName: "calendar"), for: .normal)
         departureDateButton.addTarget(self, action: #selector(departureDateOnClick(_:)), for: .touchUpInside)
         
-        // Configure return date button
-//        returnDate.setImage(UIImage(systemName: "calendar"), for: .normal)
-//        returnDate.addTarget(self, action: #selector(returnDateOnClick(_:)), for: .touchUpInside)
-        
         // Set up date picker
         datePicker.datePickerMode = .date
         datePicker.preferredDatePickerStyle = .compact // or .inline
