@@ -52,7 +52,7 @@ class SearchViewController: UIViewController {
            let destinationVC = segue.destination as? HomeViewController {
             destinationVC.departureId = departtureAirportField.text ?? ""
             destinationVC.arrivalId = arrivaleAirportField.text ?? ""
-            destinationVC.outboundDate = "2024-05-13" 
+            destinationVC.outboundDate = "2024-06-13" 
             destinationVC.returnDate = "2024-08-19"
             destinationVC.currency = "USD"
             destinationVC.hl = "en"
