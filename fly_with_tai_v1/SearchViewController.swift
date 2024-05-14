@@ -52,7 +52,7 @@ class SearchViewController: UIViewController {
            let destinationVC = segue.destination as? HomeViewController {
             destinationVC.departureId = departtureAirportField.text ?? ""
             destinationVC.arrivalId = arrivaleAirportField.text ?? ""
-            destinationVC.outboundDate = "2024-06-13" 
+            destinationVC.outboundDate = "2024-06-13"
             destinationVC.returnDate = "2024-08-19"
             destinationVC.currency = "USD"
             destinationVC.hl = "en"
@@ -93,8 +93,8 @@ class SearchViewController: UIViewController {
         departureDateButton.addTarget(self, action: #selector(departureDateOnClick(_:)), for: .touchUpInside)
         
         // Configure return date button
-        returnDate.setImage(UIImage(systemName: "calendar"), for: .normal)
-        returnDate.addTarget(self, action: #selector(returnDateOnClick(_:)), for: .touchUpInside)
+//        returnDate.setImage(UIImage(systemName: "calendar"), for: .normal)
+//        returnDate.addTarget(self, action: #selector(returnDateOnClick(_:)), for: .touchUpInside)
         
         // Set up date picker
         datePicker.datePickerMode = .date
