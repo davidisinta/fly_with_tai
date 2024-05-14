@@ -87,27 +87,11 @@ class SearchViewController: UIViewController {
     
     
     
-    func configureButtons() {
-        // Configure departure date button
+    func configureButtons() 
+    {
+        
         departureDateButton.setImage(UIImage(systemName: "calendar"), for: .normal)
-        departureDateButton.addTarget(self, action: #selector(departureDateOnClick(_:)), for: .touchUpInside)
-        
-        // Set up date picker
-        datePicker.datePickerMode = .date
-        datePicker.preferredDatePickerStyle = .compact // or .inline
-        datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
-        view.addSubview(datePicker)
-        
-        // Layout
-        datePicker.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            datePicker.topAnchor.constraint(equalTo: departureDateButton.bottomAnchor, constant: 0.001),
-            datePicker.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
-        
-        // Hide date picker initially
-        datePicker.isHidden = true
+
     }
 
 
